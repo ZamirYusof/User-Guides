@@ -1,0 +1,52 @@
+0. list down unique value in a column
+=unique(c:c)
+
+0: delete filtered row without deleting hidden row
+= after filtered, click on find & select > go to special > visible cellys only
+
+1. Check duplicate value in 1 column
+=COUNTIF($B$1:$B$150000,B1)>1
+
+2. Concatenate two columns value
+=CONCATENATE(A2,",",B2)
+
+3. =TEXTJOIN(",",TRUE,A:A)
+concatenate column of data (combine list of attributes for families, into single column with comma separator)
+
+4. Compare 2 list with different order
+=MATCH(A2,B:B,0)
+=VLOOKUP(A2,A:B,2,false)
+- for return multiple column
+https://www.extendoffice.com/documents/excel/5334-excel-vlookup-to-return-multiple-columns.html
+step 1 : select multiple column to show the value
+step 2 : write the formula 
+=VLOOKUP(G2,A:E,{2,4,5},FALSE)
+G2 is reference value
+A:E is range of array to look for
+2,4,5 is the column where the value is available
+false will return the exact match
+
+5. Compare 2 list for same order
+=IF(C2=I2,"Yes","No")
+
+6. Compare 3 list with same order for range of column
+=IF(AND(C2=F2,F2=I2),"Yes","No")
+
+7. Compare 2 list, and display the value of the 3rd column
+=MATCH(E3,A$1:A$1100,0)
+
+8. Count number of same values
+=COUNTIF($C$2:$C$8,E2)
+
+9. Vlookup Formula within same sheet:  
+=VLOOKUP(A1,B:B,1,FALSE)
+
+10. Vlookup Formula for fetching data from different sheet:  
+=VLOOKUP(A1,Sheet4!A:C,3,FALSE)
+
+11. Compare two columns and return value from third column with VLOOKUP function
+=VLOOKUP(D2,$A$2:$B$16,2,FALSE)
+=vlookup(A2,$'CDS-Retail SKUs'.A$2:$'CDS-Retail SKUs'.B$183136,2,False)
+
+
+
